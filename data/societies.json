@@ -1,0 +1,38 @@
+{
+    "society": [
+        {
+            "id": "1", "name":"Aakanksha Tower", "image": "../societies/aakanksha.jpg", "address":"Andheri West, Mumbai"
+        }, 
+        {
+            "id": "2", "name":"Amrita Prive", "image": "../societies/amrita_prive.jpg",  "address":"Chembur, Mumbai"
+        }, 
+        {
+           "id": "3",  "name":"Anchorage", "image": "../societies/anchorage.jpg", "address":"Chembur, Mumbai"
+        }, 
+        {
+            "id": "4", "name":"Balaji Infotech", "image": "../societies/balaji_infotech.png", "address":"Thane, Mumbai"
+        }, 
+        {
+            "id":"5", "name":"Chintamani Plaza", "address":"Dahisar East, Mumbai", "image":"../societies/chintamani.jpg"
+        }, 
+        {
+            "id":"6", "name": "Kalanagar", "address": "Bandra East", "image":"../societies/kalanagar.jpeg"
+        }, 
+        {
+            "id":"7", "name": "Midori B Wing", "address": "Dahisar East, Mumbai", "image":"../societies/midoriB.jpg"
+        }, 
+        {
+            "id":"8", "name":"RNA Continental", "address": "Chembur, Mumbai", "image": "../societies/rna_chembur.jpg"
+        }, 
+        {
+            "id":"9", "name":"Royal status", "address": "Dadar East", "image":"../societies/royal_status.jpeg"
+        }, 
+        {
+            "id":"10", "name":"Sun Moon", "address": "Borivali East", "image":"../societies/sunmoon.jpg"
+        }, 
+
+        {
+            "id":"11", "name":"Midori C Wing", "address":"Dahisar East, Mumbai", "image": "../societies/midoriC.jpg"
+        }
+    ]
+}

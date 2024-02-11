@@ -1,0 +1,20 @@
+{
+    "test": [
+        {
+            "id":"1" ,"name":"Monish Naidu", "image": "../testimonial/monish.jpg", "designation":"Sheth Midori", "description": "Our experience with Tick Boxes has been nothing short of exceptional. Their attention to detail, prompt communication, and efficient management of our community have significantly improved the overall living experience for our residents. Highly recommended!"
+        }, 
+        {
+            "id":"2" ,"name":"Pankaj Kanal", "image":"../testimonial/pank.png",  "designation":"Balaji Infotech", "description": "Choosing Tick Boxes was one of the best decisions we made for our community. Their professional approach, seamless technology integration, and proactive problem-solving have made a positive impact on our society's functionality and resident satisfaction."
+        },
+        {
+            "id":"3" ,"name":"Abhishek Bhalotia", "image": "../testimonial/abh.jpg", "designation":"Anish Tower", "description": "The efficiency and professionalism displayed by Tick Boxes have greatly contributed to the harmonious functioning of our society. Their commitment to delivering quality service and their ability to adapt to our specific needs make them a trusted partner in our community's management."
+        }, 
+        {
+            "id":"4" ,"name":"Bhadresh Panchal", "image": "../testimonial/bha.png", "designation":"Chintamani Plaza", "description": "We've been working with Tick Boxes for several months now, and the level of service they provide is unmatched. Their dedicated team is always responsive, and their commitment to streamlining processes has made our community operations smoother and more transparent."
+        }, 
+        {
+            "id":"5" ,"name":"Radhakrishna Amin", "image": "../testimonial/rah.png", "designation":"RNA Continental", "description": "As a committee member, I can confidently say that Tick Boxes has exceeded our expectations. Their user-friendly platform, coupled with their knowledgeable and friendly staff, has made our management tasks much easier. It's been a pleasure working with them."
+        }
+
+    ]
+}
