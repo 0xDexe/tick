@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import SocietyCard from "../components/SocietyCard"; 
 import { useTheme } from "next-themes";
 // Data
-import data from "../data/portfolio.json";
 import societies from "../data/societies.json"; 
 
 const Resume = () => {
@@ -17,15 +16,14 @@ const Resume = () => {
     setMount(true);
     
   }, []);
-  return (
-    <>
+  return (    <>
       
       <Header />
       
         {mount && (
           <div className="mt-5 w-full flex flex-col items-center justify-center bg-gray-50  p-10 mob:p-5 desktop:p-10 rounded-lg shadow-sm">
             
-              <div className="grid grid-cols-4 justify-center gap-4"  style={{ margin: '0 auto'}}>
+              <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 justify-center gap-3"  style={{ margin: '0 auto'}}>
             {societies.society.map((t) => (
               <SocietyCard   
               key={t.id}             

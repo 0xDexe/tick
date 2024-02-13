@@ -10,12 +10,10 @@ const ServiceCard = ({ name, description }) => {
   }, []);
   return (
     <div
-      className={`w-full p-2 mob:p-4 rounded-lg transition-all ease-out duration-300 ${
-        mounted && theme === "dark" ? "hover:bg-slate-800" : "hover:bg-slate-50"
-      } hover:scale-105 link`}
+      className={`w-full p-2 mob:p-4 rounded-lg transition-all ease-out duration-300 hover:bg-slate-50 hover:scale-105 link`}
     >
-      <h1 className="text-2xl">{name ? name : "Heading"}</h1>
-      <p className="mt-4 opacity-70 text-xl">
+      <h1 className="laptop:text-2xl text-xl ">{name ? name : "Heading"}</h1>
+      <p className="mt-4 opacity-70 laptop:text-xl text-lg">
         {description
           ? description
           : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "}

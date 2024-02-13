@@ -1,5 +1,4 @@
-import { Popover } from "@headlessui/react";
-import { useTheme } from "next-themes";
+
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
@@ -13,10 +12,9 @@ const Header = ({ }) => {
   }, []);
 
   return (
-    <>
      
       <div     
-        className={`bg-blue-800 p-3 flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex`}
+        className={`w-full bg-blue-800 p-3 flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex mob:flex`}
       >
         <h2
           onClick={() => router.push("/")}
@@ -26,21 +24,17 @@ const Header = ({ }) => {
         </h2>
         {(
           <div className="flex">
-             <Button onClick={() => router.push("/")}>Home</Button>            
-            <Button onClick={() => router.push("/services")}>Services</Button>
-            
+            <Button onClick={() => router.push("/")}>Home</Button>            
+            <Button onClick={() => router.push("/services")}>Services</Button>            
             <Button onClick={() => router.push("/societies")} classes="first:ml-1">
                 Where we work
-              </Button>           
-
+              </Button>    
             <Button onClick={() => router.push("/contact")}>
               Contact
             </Button>
-            
           </div>
-        ) } 
+        )} 
       </div>
-    </>
   );
 };
 

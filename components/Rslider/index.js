@@ -19,13 +19,13 @@ const TestimonyCard = ({ img, name, designation, description }) => {
           ></img>
         </div>
   
-        <h1 className="mt-5 text-3xl font-medium">
+        <h1 className="mt-5 text-lg laptop:text-2xl font-medium">
           {name ? name : "default"}
         </h1>
-        <h1 className=" text-lg font-medium">
+        <h1 className=" text-base laptop:text-lg font-medium">
           {designation ? designation : "default"}
         </h1>
-        <h2 className="mt-4 text-xl opacity-70">
+        <h2 className="mt-4 text-lg taptop:text-xl opacity-70">
           {description ? description : "Description"}
         </h2>
       </div>

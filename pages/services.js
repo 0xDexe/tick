@@ -17,18 +17,12 @@ const Service = () => {
 
   return (
     <>    
-      <Header  />  
-      <div
-        className={`container mx-auto mb-10 ${
-          data.showCursor && "cursor-none"
-        }`}
-      >
-        
-        {mount && (
-          
-          <div className="mt-10 w-full flex flex-col items-center">
+     <Header  />
+        {mount && (          
+          <div className="container mx-auto mx-0">        
+
             <div
-              className={`w-full big-gray-100 p-10 mob:p-5 desktop:m-10 desktop:p-10 rounded-lg shadow-sm`}
+              className={` mt-5 laptop:mt-15 laptop:p-10 desktop:m-10 desktop:p-10 rounded-lg shadow-sm`}
             >
               <div className="App"> 
                 <Table data={data}/> 
@@ -37,7 +31,6 @@ const Service = () => {
             </div>
           </div>
         )}
-      </div>
     </>
   );
 };

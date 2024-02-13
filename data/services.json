@@ -1,7 +1,7 @@
 {
     "serviceList": [
         {
-            "name":"Society Manager", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
+            "name":"Society Manager", "v":"Part-time, Monthly Once", "s":"Part-time, Monthly Once", "g":"Part-time, Weekly Once","p":"Part-time, Weekly Once ", "d":"Full time Society Manager"
         },
         {
             "name":"Maintenance of Statutory Record", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
@@ -16,10 +16,10 @@
             "name":"Record Keeping and Filing", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
         }, 
         {
-            "name":"Coordination with audito", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
+            "name":"Coordination with Auditor", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
         }, 
         {
-            "name":"Keeping Track of annual renewal", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
+            "name":"Keeping Track of Annual Renewal", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
         }, 
         {
             "name":"Keeping Track of Fixed Deposits", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
@@ -34,10 +34,10 @@
             "name":"Drafting of Notice, Circulars, NOC", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
         }, 
         {
-            "name":"Member document management", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
+            "name":"Member Document Management", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
         }, 
         {
-            "name":"Coordination with society lawyer", "v":"No", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
+            "name":"Coordination with Society Lawyer", "v":"No", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
         }, 
         {
             "name":"Maintenance of Society Property", "v":"No", "s":"Yes", "g":"Yes","p":"Yes", "d":"Yes"
@@ -61,10 +61,10 @@
             "name":"Attend Managing Committee Meetings", "v":"No", "s":"No", "g":"No","p":"No",  "d":"Yes"
         }, 
         {
-            "name":"Get 3 Quotes for any work", "v":"No", "s":"No", "g":"No","p":"No",  "d":"Yes"
+            "name":"Get 3 Quotes for Any Work", "v":"No", "s":"No", "g":"No","p":"No",  "d":"Yes"
         }, 
         {
-            "name":"Verification of flat transfer document from legal team", "v":"No", "s":"No", "g":"No","p":"No",  "d":"Yes"
+            "name":"Verification of Flat Transfer Document from Legal Team", "v":"No", "s":"No", "g":"No","p":"No",  "d":"Yes"
         }, 
         {
             "name":"Budgeting", "v":"No", "s":"No", "g":"No","p":"No",  "d":"Yes"
@@ -75,45 +75,45 @@
         
     ],
 
-    "EscalationMatrix":    {            "name":"1 Level Escalation", "v":"Yes", "s":"Yes", "g":"Yes","p":"Yes",  "d":"Yes"
+    "EscalationMatrix":    {            "name":"1 Level Escalation", "v":"No", "s":"No", "g":"Yes","p":"Yes",  "d":"Yes"
 },
 
 "Supervisor":    { "name":"Supervisor monthly visit", "v":"1", "s":"1", "g":"1","p":"1",  "d":"2"
 }, 
 "Financial": [
     {
-        "name":"Society Maintenance Bill Generation - Quarterly", "v":"Society", "s":"Society", "g":"Society","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"Society Maintenance Bill Generation - Quarterly", "v":"Society", "s":"Society", "g":"Society","p":"TickBoxes",  "d":"TickBoxes"
 
     }, 
     {
-        "name":"Physical Maintenance Bill To Members", "v":"Society", "s":"Society", "g":"Society","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"Physical Maintenance Bill To Members", "v":"Society", "s":"Society", "g":"Society","p":"TickBoxes",  "d":"TickBoxes"
 
     }, 
     {
-        "name":"Finalisation of Accounts ", "v":"Society", "s":"Society", "g":"Society","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"Finalisation of Accounts ", "v":"Society", "s":"Society", "g":"Society","p":"TickBoxes",  "d":"TickBoxes"
 
     }
 
 ], 
 "Statutory": [
     {
-        "name":"Auditing", "v":"Tick Boxes", "s":"Tick Boxes", "g":"Tick","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"Auditing", "v":"TickBoxes", "s":"TickBoxes", "g":"TickBoxes","p":"TickBoxes",  "d":"TickBoxes"
 
     }, 
     {
-        "name":"Audit Report", "v":"Tick Boxes", "s":"Tick Boxes", "g":"Tick","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"Audit Report", "v":"TickBoxes", "s":"TickBoxes", "g":"TickBoxes","p":"TickBoxes",  "d":"TickBoxes"
 
     },
     {
-        "name":"Income tax filing", "v":"Tick Boxes", "s":"Tick Boxes", "g":"Tick","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"Income Tax Filing", "v":"TickBoxes", "s":"TickBoxes", "g":"TickBoxes","p":"TickBoxes",  "d":"TickBoxes"
 
     },
     {
-        "name":"TDS return filing", "v":"Tick Boxes", "s":"Tick Boxes", "g":"Tick","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"TDS Return Filing", "v":"TickBoxes", "s":"TickBoxes", "g":"TickBoxes","p":"TickBoxes",  "d":"TickBoxes"
 
     },
     {
-        "name":"GST return filing", "v":"Tick Boxes", "s":"Tick Boxes", "g":"Tick","p":"Tick Boxes",  "d":"Tick Boxes"
+        "name":"GST Return Filing", "v":"TickBoxes", "s":"TickBoxes", "g":"TickBoxes","p":"TickBoxes",  "d":"TickBoxes"
 
     }
 ]
