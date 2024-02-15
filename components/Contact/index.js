@@ -1,28 +1,45 @@
-
-
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
-  const sendEmail = () => {
-    const form = document.getElementById('contactForm');
-    const formData = new FormData(form);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-    fetch('/send-email', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert('Email sent successfully!');
-          form.reset(); // Clear the form after successful submission
-        } else {
-          throw new Error('Email sending failed.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        alert('Failed to send email. Please try again later.');
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = async () => {
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      if (response.ok) {
+        alert('Email sent successfully!');
+        // Clear form after successful submission
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send email.');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send email. Please try again later.');
+    }
   };
 
   return (
@@ -30,84 +47,59 @@ export default function Contact() {
       <h2 className="mb-4 text-4xl font-extrabold text-center text-gray-900">
         Contact Us
       </h2>
-      <br />
-      <br />
-      <p className="mb-4 font-light text-left text-gray-500 sm:text-xl">
-        Leave all your worries to us. Let tickboxes handle your work.
-      </p>
-      <form id="contactForm">
-	  <div className="flex flex-row"> 
-					<div className="w-1/2 pr-2 "> 
-						<label htmlFor="firstName"
-							className="block my-2 text-left 
-										text-sm font-medium text-gray-900"> 
-							First Name 
-						</label> 
-						<input type="text"
-							className="shadow-sm bg-gray-50 border 
-										border-gray-300 text-gray-900 
-										text-sm rounded-lg block w-full p-2.5"
-							placeholder="Enter First Name"
-							required/> 
-					</div> 
-					<div className="w-1/2 pl-2"> 
-						<label htmlFor="firstName"
-							className="block my-2 text-left text-sm 
-										font-medium text-gray-900"> 
-							Last Name 
-						</label> 
-						<input type="text"
-							className="shadow-sm bg-gray-50 border 
-										border-gray-300 text-gray-900 
-										text-sm rounded-lg block w-full p-2.5"
-							placeholder="Enter Last Name"/> 
-					</div> 
-				</div> 
-				<div> 
-					<label htmlFor="email"
-						className="block my-2 text-left text-sm 
-									font-medium text-gray-900"> 
-						Your email 
-					</label> 
-					<input type="email"
-						className="shadow-sm bg-gray-50 border 
-									border-gray-300 text-gray-900 
-									text-sm rounded-lg block w-full p-2.5"
-						placeholder="abc@gmail.com"
-						required /> 
-				</div> 
-				<div> 
-					<label htmlFor="subject"
-						className="block my-2 text-left 
-									text-sm font-medium text-gray-900"> 
-						Subject 
-					</label> 
-					<input type="text"
-						className="block p-3 w-full text-sm 
-									text-gray-900 bg-gray-50 rounded-lg 
-									border border-gray-300 shadow-sm "
-						placeholder="Which service do you need?"
-						required /> 
-				</div> 
-				<div > 
-					<label htmlFor="message"
-						className="block my-2 text-left 
-									text-sm font-medium text-gray-900 "> 
-						Message.  
-					</label> 
-					<textarea rows="6"
-							className="block p-2.5 w-full text-sm 
-										text-gray-900 bg-gray-50 rounded-lg 
-										shadow-sm border border-gray-300 "
-							placeholder="Tell us your needs."/> 
-				</div> 
-
+      <form>
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            placeholder="First Name"
+            className="p-2 border border-gray-300 rounded-lg"
+            required
+          />
+          <input
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            placeholder="Last Name"
+            className="p-2 border border-gray-300 rounded-lg"
+          />
+        </div>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email Address"
+          className="w-full mt-4 p-2 border border-gray-300 rounded-lg"
+          required
+        />
+        <input
+          type="text"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          placeholder="Subject"
+          className="w-full mt-4 p-2 border border-gray-300 rounded-lg"
+          required
+        />
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Message"
+          rows="4"
+          className="w-full mt-4 p-2 border border-gray-300 rounded-lg"
+          required
+        />
         <button
           type="button"
           onClick={sendEmail}
-          className="mt-4 p-2 float-center text-white rounded-lg border-black-600 shadow-sm bg-gray-400 hover:scale-105"
+          className="mt-4 p-2 w-full text-white rounded-lg border-black-600 shadow-sm bg-gray-400 hover:scale-105"
         >
-          Send message
+          Send Message
         </button>
       </form>
     </div>

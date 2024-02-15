@@ -17,7 +17,7 @@
 
     return (
 
-    <div className="p-3 w-full laptop:w-5/6 mt-3 relative overflow-hidden">
+    <div className="p-3 w-full h-auto laptop:w-5/6 mt-3 relative overflow-hidden">
     <div className="relative">
       <img
         src={slides[currentIndex].imageUrl}

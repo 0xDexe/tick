@@ -3,7 +3,7 @@ import React from "react";
 const TestimonyCard = ({ img, name, designation, description }) => {
   return (
     <div
-      className="flex flex-col items-center overflow-hidden rounded-lg p-2 laptop:p-4 first:ml-0 link justify-center"
+      className="flex flex-col items-center overflow-hidden rounded-lg p-2 laptop:p-4 link justify-center"
       //onClick={onClick} background div
     >
       <div
@@ -18,7 +18,7 @@ const TestimonyCard = ({ img, name, designation, description }) => {
         ></img>
       </div>
 
-      <h1 className="mt-5 text-3xl font-medium">
+      <h1 className="mt-5 text-2xl laptop:text-3xl font-medium">
         {name ? name : "default"}
       </h1>
       <h1 className=" text-lg font-medium">

@@ -80,7 +80,7 @@ export default function Home() {
           </div>  
     
           <div className="flex justify-center mt-6 laptop:mt-15">
-            <video className="w-3/4 h-3/4  rounded-lg" controls>
+            <video className="w-full h-auto laptop:w-3/4 laptop:h-3/4  rounded-lg" controls>
               <source src="/tick-vid.mp4"/>
               Your browser does not support the video tag.
             </video>   

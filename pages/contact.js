@@ -16,13 +16,12 @@ const ContactForm = () => {
   return (
     <>
     
-    <Header isBlog />
+    <Header />
       
       <div
         className={`container mx-auto mb-10 `}
       >
-        {mount && (
-          
+        {mount && (          
           <div className="mt-10 w-full flex flex-col items-center">
             <div
               className={`w-full bg-gray-50  max-w-4xl mt-5 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
