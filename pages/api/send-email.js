@@ -1,37 +1,37 @@
-import nodemailer from 'nodemailer';
+const express = require('express');
+const router = express.Router();
+const nodemailer = require('nodemailer');
 
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
+// Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'SES', // Use Amazon SES as the transport service
+  auth: {
+    user: 'AKIA5M7WE3JGVIDQ5CXU',
+    pass: 'BOOsM7M72YhrBWeoQ1/5nJb28tm41q+V77zS1TOhMs0c', 
+  },
+});
+
+// API route to send emails
+router.post('/send-email', async (req, res) => {
+  try {
     const { firstName, lastName, email, subject, message } = req.body;
 
-    // Create a Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-        host: 'your-smtp-host', // Your SMTP server host
-        port: 587, // SMTP port (typically 587 for TLS, 465 for SSL)
-        secure: false, // Set to true if your SMTP server requires SSL/TLS
-        auth: {
-          user: 'your-smtp-username', // Your SMTP username
-          pass: 'your-smtp-password', // Your SMTP password
-        },
-      });
+    // Create email message
+    const mailOptions = {
+      from: email,
+      to: 'nilesh@tickboxes.in',
+      subject: subject,
+      text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
+    };
 
-    try {
-      // Send mail with defined transport object
-      
-      const info = await transporter.sendMail({
-        from: `"${firstName} ${lastName}" <${email}>`,
-        to: 'recipient@example.com', // Your email recipient
-        subject: subject,
-        text: message,
-      });
+    // Send email
+    await transporter.sendMail(mailOptions);
 
-      console.log('Message sent: %s', info.messageId);
-      res.status(200).json({ message: 'Email sent successfully' });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ error: 'Failed to send email' });
-    }
-  } else {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(200).json({ success: true, message: 'Email sent successfully.' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ success: false, message: 'Failed to send email.' });
   }
-}
+});
+
+module.exports = router;
