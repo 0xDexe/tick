@@ -101,7 +101,7 @@ export default function Contact() {
   />
   <button
     type="button"
-    onClick={sendEmail}
+    onClick={handleSubmit}
     className="mt-4 p-2 w-full text-white rounded-lg border-black-600 shadow-sm bg-gray-400 hover:scale-105"
   >
     Send Message
