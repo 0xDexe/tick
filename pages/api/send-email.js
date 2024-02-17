@@ -1,37 +1,55 @@
-const express = require('express');
-const router = express.Router();
-const nodemailer = require('nodemailer');
+// api/send-email.js
 
-// Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: 'SES', // Use Amazon SES as the transport service
-  auth: {
-    user: 'AKIA5M7WE3JGVIDQ5CXU',
-    pass: 'BOOsM7M72YhrBWeoQ1/5nJb28tm41q+V77zS1TOhMs0c', 
-  },
-});
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
-// API route to send emails
-router.post('/send-email', async (req, res) => {
-  try {
+export default async function handler(req, res) {
+  if (req.method === "POST") {
     const { firstName, lastName, email, subject, message } = req.body;
 
-    // Create email message
-    const mailOptions = {
-      from: email,
-      to: 'nilesh@tickboxes.in',
-      subject: subject,
-      text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
+    // Construct sender and recipient email addresses
+    const sender = `Nilesh@tickboxes.in`;
+    const recipient = "Nilesh@tickboxes.in"; // Replace with your recipient email address
+
+    // Create SES client
+    const sesClient = new SESClient({ region: "ap-southeast-1" , credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    }}); // Replace "your-region" with your AWS region
+    const currentTime = new Date().toLocaleString();
+
+    // Construct email parameters
+    const params = {
+      Destination: {
+        ToAddresses: [recipient],
+      },
+      Message: {
+        Body: {
+          Text: {
+            Data:'From\n Name: ${firstname} ${lastname}\nEmail: ${email}\nTime: ${currentTime}\nMessage: ${message}' 
+          },
+        },
+        Subject: {
+          Data: subject,
+        },
+      },
+      Source: sender,
     };
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+    try {
+      // Send email using SES
+      const data = await sesClient.send(new SendEmailCommand(params));
+      console.log("Email sent:", data.MessageId);
 
-    res.status(200).json({ success: true, message: 'Email sent successfully.' });
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ success: false, message: 'Failed to send email.' });
+      // Return success response to the client
+      res.status(200).json({ success: true });
+    } catch (err) {
+      console.error("Error sending email:", err);
+
+      // Return error response to the client
+      res.status(500).json({ success: false, error: "Failed to send email" });
+    }
+  } else {
+    // Handle other HTTP methods
+    res.status(405).json({ error: "Method Not Allowed" });
   }
-});
-
-module.exports = router;
+}
